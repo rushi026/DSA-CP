@@ -1,0 +1,46 @@
+/*
+    Problem link: https://codeforces.com/contest/1327/problem/A
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+/***********************************/
+
+#define ll              long long int
+#define ull             unsigned long long int
+#define loop(i,x,y)     for(ll i=x; i<y; i++)
+#define rloop(i,x,y)    for(ll i=y; i>=x; i--)
+#define endl            '\n'
+#define speedy          ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+
+
+/***********************************/
+void solve()
+{
+    ll n,k;
+    cin>>n>>k;
+    if(n<k)
+    {
+        cout<<"NO"<<endl;
+        return;
+    }
+    if((n&1) && (k&1))
+        cout<<"YES"<<endl;
+    else if((!(n&1)) && (!(k&1)))
+        cout<<"YES"<<endl;
+    else
+        cout<<"NO"<<endl;
+}
+
+/***********************************/
+int main()
+{
+    speedy;
+    ll t=1;
+    cin>>t;
+    while(t--)
+        solve();
+    return 0;
+}
+
