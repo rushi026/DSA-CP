@@ -1,10 +1,10 @@
 /*
     # Virtual Contest 
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A. Is It a Cat?
+    Problem link:       https://codeforces.com/contest/1800/problem/A
+    Contest:            Codeforces Round 855 (Div. 3)
+    Date:               04/03/2023
+    Last Updated:       04/03/2023
     Author:             Rushiraj Parekh
 */
 
@@ -49,7 +49,38 @@ ll power(ll x, ll y, ll p = 1e9+7)
 /***********************************/
 void solve()
 {
-    
+    ll n;
+    cin>>n;
+    string s;
+    cin>>s;
+    if(s.length() < 4) {
+        cout<<"NO"<<ee;
+        return;
+    }
+    transform(s.begin(), s.end(), s.begin(), ::tolower);
+    int i=0;
+    if(s[i] != 'm') {
+        cout<<"NO"<<ee;
+        return;
+    }
+    while(i<s.length() && s[i] == 'm') i++;
+    if(i >= s.length() || s[i] != 'e') {
+        cout<<"NO"<<ee;
+        return;
+    }
+    while(i<s.length() && s[i] == 'e') i++;
+    if(i >= s.length() || s[i] != 'o') {
+        cout<<"NO"<<ee;
+        return;
+    }
+    while(i<s.length() && s[i] == 'o') i++;
+    if(i >= s.length() || s[i] != 'w') {
+        cout<<"NO"<<ee;
+        return;
+    }
+    while(i<s.length() && s[i] == 'w') i++;
+    if(i == s.length()) cout<<"YES"<<ee;
+    else cout<<"NO"<<ee;
 }
 
 /***********************************/

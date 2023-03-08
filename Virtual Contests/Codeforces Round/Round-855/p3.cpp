@@ -1,10 +1,10 @@
 /*
     # Virtual Contest 
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            C1. Powering the Hero (easy version)
+    Problem link:       https://codeforces.com/contest/1800/problem/C1
+    Contest:            Codeforces Round 855 (Div. 3)
+    Date:               06/03/2023
+    Last Updated:       06/03/2023
     Author:             Rushiraj Parekh
 */
 
@@ -49,7 +49,21 @@ ll power(ll x, ll y, ll p = 1e9+7)
 /***********************************/
 void solve()
 {
-    
+    ll n, i, j, c=0;
+    cin>>n;
+    vll v(n);
+    scan(v);
+    loop(i,0,n,1) {
+        if(v[i] == 0) {
+            ll maxJ = i;
+            rloop(j,i-1,0,1) {
+                maxJ = v[j] > v[maxJ] ? j : maxJ;
+            }
+            c += v[maxJ];
+            v[maxJ] = 0;
+        }
+    }
+    cout<<c<<ee;
 }
 
 /***********************************/

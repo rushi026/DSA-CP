@@ -1,10 +1,10 @@
 /*
     # Virtual Contest 
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            B. Count the Number of Pairs
+    Problem link:       https://codeforces.com/contest/1800/problem/B
+    Contest:            Codeforces Round 855 (Div. 3)
+    Date:               05/03/2023
+    Last Updated:       05/03/2023
     Author:             Rushiraj Parekh
 */
 
@@ -49,7 +49,32 @@ ll power(ll x, ll y, ll p = 1e9+7)
 /***********************************/
 void solve()
 {
-    
+    ll n, k, c=0, i;
+    cin>>n>>k;
+    string s;
+    cin>>s;
+    vll a(26, 0), b(26, 0);
+    loop(i,0,n,1) {
+        if(s[i] >= 97 && s[i] <= 122) a[s[i]-97]++;
+        else b[s[i]-65]++;
+    }
+    loop(i,0,26,1) {
+        c += min(a[i], b[i]);
+    }
+    i = -1;
+    while(k) {
+        i++;
+        if(i == 26) break;
+        if(abs(a[i] - b[i])/2 <= k) {
+            k -= abs(a[i] - b[i]) / 2;
+            c += abs(a[i] - b[i]) / 2;
+        }
+        else {
+            c += k;
+            k = 0;
+        }
+    }
+    cout<<c<<ee;
 }
 
 /***********************************/

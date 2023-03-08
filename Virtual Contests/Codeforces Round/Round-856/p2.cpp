@@ -1,10 +1,10 @@
 /*
     # Virtual Contest 
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            B. Not Dividing
+    Problem link:       https://codeforces.com/contest/1794/problem/B
+    Contest:            Codeforces Round 856 (Div. 2)
+    Date:               08/03/2023
+    Last Updated:       08/03/2023
     Author:             Rushiraj Parekh
 */
 
@@ -49,7 +49,20 @@ ll power(ll x, ll y, ll p = 1e9+7)
 /***********************************/
 void solve()
 {
-    
+    ll n, i;
+    cin>>n;
+    vll v(n);
+    scan(v);
+    loop(i,0,n-1,1) {
+        if(v[i+1] % v[i] == 0) {
+            v[i]++;
+            if(i > 0 && v[i] % v[i-1] == 0) v[i]++;
+        }
+        if(i>0 && v[i] % v[i-1] == 0) v[i]++;
+    }
+    if(v[n-1] % v[n-2] == 0) v[n-1]++;
+    print(v);
+    cout<<ee;
 }
 
 /***********************************/

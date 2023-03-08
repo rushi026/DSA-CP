@@ -1,10 +1,10 @@
 /*
     # Virtual Contest 
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A. Prefix and Suffix Array
+    Problem link:       https://codeforces.com/contest/1794/problem/A
+    Contest:            Codeforces Round 856 (Div. 2)
+    Date:               08/03/2023
+    Last Updated:       08/03/2023
     Author:             Rushiraj Parekh
 */
 
@@ -45,11 +45,42 @@ ll power(ll x, ll y, ll p = 1e9+7)
     return res;
 }
 
+string rev(string s) {
+    int n = s.length();
+    string k = "";
+    while(n--) k += s[n];
+    return k;
+}
 
 /***********************************/
 void solve()
 {
-    
+    ll n, k, i, j;
+    cin>>n;
+    k = (n-1)*2;
+    string a = "", b = "", c = "", d = "";
+    vector<string> v(k);
+    loop(i,0,k,1) {
+        cin>>v[i];
+        if(v[i].length() == 1) {
+            if(a == "") a = v[i];
+            else b = v[i];
+        }
+        else if(v[i].length() == n-1) {
+            if(c == "") c = v[i];
+            else d = v[i];
+        }
+    }
+    if(n == 2 && v[0] == v[1]) {
+        cout<<"YES"<<ee;
+        return;
+    }
+    if(n == 2 && v[0] != v[1]) {
+        cout<<"NO"<<ee;
+        return;
+    }
+    if(a == b && c == rev(d)) cout<<"YES"<<ee;
+    else cout<<"NO"<<ee;
 }
 
 /***********************************/
