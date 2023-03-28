@@ -1,10 +1,10 @@
 /*
     # Virtual Contest 
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A. Showstopper
+    Problem link:       https://codeforces.com/contest/1798/problem/A
+    Contest:            Codeforces Round 860 (Div. 2)
+    Date:               27/03/2023
+    Last Updated:       27/03/2023
     Author:             Rushiraj Parekh
 */
 
@@ -49,7 +49,18 @@ ll power(ll x, ll y, ll p = 1e9+7)
 /***********************************/
 void solve()
 {
-    
+    ll n;
+    cin>>n;
+    vll a(n),b(n);
+    scan(a); scan(b);
+    loop(i,0,n-1,1) {
+        if((a[i] <= a[n-1] && b[i] <= b[n-1]) || (a[i] <= b[n-1] && b[i] <= a[n-1])) continue;
+        else {
+            cout<<"NO"<<ee;
+            return;
+        }
+    }
+    cout<<"YES"<<ee;
 }
 
 /***********************************/

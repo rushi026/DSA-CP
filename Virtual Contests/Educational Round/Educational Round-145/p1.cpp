@@ -1,10 +1,10 @@
 /*
     # Virtual Contest 
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A. Garland
+    Problem link:       https://codeforces.com/contest/1809/problem/A
+    Contest:            Educational Codeforces Round 145 (Rated for Div. 2)
+    Date:               24/03/2023
+    Last Updated:       24/03/2023
     Author:             Rushiraj Parekh
 */
 
@@ -49,7 +49,13 @@ ll power(ll x, ll y, ll p = 1e9+7)
 /***********************************/
 void solve()
 {
-    
+    string s;
+    cin>>s;
+    map<char, int> m;
+    m[s[0]]++; m[s[1]]++; m[s[2]]++; m[s[3]]++;
+    if(m.size() == 1) cout<<-1<<ee;
+    else if(m.size() == 2 && (m[s[0]] == 3 || m[s[1]] == 3 || m[s[2]] == 3)) cout<<6<<ee;
+    else cout<<4<<ee;
 }
 
 /***********************************/
