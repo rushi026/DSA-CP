@@ -3,8 +3,8 @@
     Problem:            B. Candies
     Problem link:       https://codeforces.com/contest/1810/problem/B
     Contest:            CodeTON Round 4 (Div. 1 + Div. 2, Rated, Prizes!)
-    Date:               04/04/2023
-    Last Updated:       04/04/2023
+    Date:               03/04/2023
+    Last Updated:       03/04/2023
     Author:             Rushiraj Parekh
 */
 
