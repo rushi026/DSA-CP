@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            C. Restore the Array
+    Problem link:       https://codeforces.com/contests/1811/problem/C
+    Contest:            Codeforces Round 863 (Div. 3)
+    Date:               04/04/2023
+    Last Updated:       05/04/2023
     Author:             Rushiraj Parekh
 */
 
@@ -45,7 +45,13 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    ll n, i;
+    cin>>n;
+    vll v(n-1);
+    scan(v);
+    cout<<v[0]<<" ";
+    loop(i,0,n-2,1) cout<<min(v[i], v[i+1])<<" ";
+    cout<<v[n-2]<<ee;
 }
 
 /***********************************/
