@@ -1,0 +1,86 @@
+/*
+    # Virtual Contest
+    Problem:            C. Mr. Perfectly Fine
+    Problem link:       https://codeforces.com/contest/1829/problem/C
+    Contest:            Codeforces Round 871 (Div. 4)
+    Date:               08/05/2023
+    Last Updated:       08/05/2023
+    Author:             Rushiraj Parekh
+*/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+/***********************************/
+
+#define ll                  long long int
+#define ull                 unsigned long long int
+#define loop(i,x,y,z)       for(ll i=x; i<y; i+=z)
+#define rloop(i,x,y,z)      for(ll i=x; i>=y; i-=z)
+#define ee                  '\n'
+#define vll                 vector<ll>
+#define scan(v)             for(auto &i : v) cin>>i;
+#define print(v)            for(auto i : v) cout<<i<<" ";
+#define pb                  push_back
+#define all(x)              x.begin(),x.end()
+#define _sort(x)            sort(all(x))
+#define speedy              ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
+#define ins(vec,pos,val)    vec.emplace(vec.begin()+pos, val)
+#define del(vec,pos)        vec.erase(vec.begin()+pos)
+
+/**********************************/
+
+ll power(ll x, ll y) {
+    ll res = 1;
+    while(y>0) {
+        if(y&1) res *= x;
+        x *= x;
+        y >>= 1;
+    }
+    return res;
+}
+
+
+/***********************************/
+void solve() {
+    ll n, c1 = INT_MAX, c2 = INT_MAX, c3 = INT_MAX, a1 = INT_MAX, a2 = INT_MAX;
+    cin>>n;
+    bool b1 = false, b2 = false, b3 = false;
+    vll v(n); vector<string> s(n);
+    loop(i,0,n,1) {
+        cin>>v[i];
+        cin>>s[i];
+        if(s[i] == "11") {
+            b3 = true;
+            c3 = min(c3, v[i]);
+        } else if(s[i] == "10") {
+            b2 = true;
+            c2 = min(c2, v[i]);
+        } else if(s[i] == "01") {
+            b1 = true;
+            c1 = min(c1, v[i]);
+        }
+    }
+    if((!b1 || !b2) && (!b3)) {
+        cout<<-1<<ee;
+        return;
+    }
+    if(b3) a1 = c3;
+    if(b1 && b2) a2 = c1+c2;
+    cout<<min(a1,a2)<<ee;
+}
+
+/***********************************/
+int main() {
+
+    #ifndef ONLINE_JUDGE
+        freopen("../../../input.txt", "r", stdin);
+        freopen("../../../output.txt", "w", stdout);
+    #endif
+
+    speedy;
+    ll t=1;
+    cin>>t;
+    while(t--) solve();
+    return 0;
+}
