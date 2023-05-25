@@ -49,15 +49,12 @@ void solve() {
     cin>>n;
     string s;
     cin>>s;
-    vll v(n+1);
-    v[0] = 0;
-    loop(i,0,n,1) {
-        if(s[i] == '<') v[i+1] = v[i]+1;
-        else v[i+1] = v[i]-1;
-    }
-    print(v); cout<<ee;
     sll _s;
-    for(auto k: v) _s.insert(k);
+    _s.insert(c);
+    loop(i,0,n,1) {
+        if(s[i] == '<') _s.insert(++c);
+        else _s.insert(--c);
+    }
     cout<<_s.size()<<ee;
 }
 
