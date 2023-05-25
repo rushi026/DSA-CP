@@ -45,17 +45,18 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    ll n, i, c=0;
+    ll n, i, c=1, ans = 1;
     cin>>n;
     string s;
     cin>>s;
-    sll _s;
-    _s.insert(c);
-    loop(i,0,n,1) {
-        if(s[i] == '<') _s.insert(++c);
-        else _s.insert(--c);
+    loop(i,1,n,1) {
+        if(s[i] == s[i-1]) {
+            c++;
+            ans = max(ans,c);
+        }
+        else c=1;
     }
-    cout<<_s.size()<<ee;
+    cout<<ans+1<<ee;
 }
 
 /***********************************/
