@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            E. Nearly Shortest Repeating Substring
+    Problem link:       https://codeforces.com/contest/1950/problem/E
+    Contest:            Codeforces Round 937 (Div. 4)
+    Date:               28/03/2024
+    Last Updated:       02/04/2024
     Author:             Rushiraj Parekh
 */
 
@@ -42,10 +42,58 @@ ll pow(ll x, ll n) {
     return res;
 }
 
-
 /***********************************/
+
+bool isDivisible(string &s, string &sub) {
+    int n = s.size();
+    int k = sub.size();
+    int c = 0, i = 0;
+    while(i < n) {
+        int cc = 0;
+        for(int j = 0; j < k; j++) {
+            if(sub[j] != s[i]) {
+                cc++;
+                c++;
+            }
+            if(cc > 1) return false;
+            i++;
+        }
+        if(c > 1) return false;
+    }
+    return true;
+}
+
+bool possible(string &s, int n, int k) {
+    string pre = s.substr(0, k);
+    if(isDivisible(s, pre)) return true;
+    pre = s.substr(n-k, k);
+    return isDivisible(s, pre);
+}
+
 void solve() {
-    
+    int n;
+    cin>>n;
+    string s;
+    cin>>s;
+    vector<int> divisors;
+    for(int i = 1; i * i <= n; i++) {
+        if(n % i == 0) {
+            divisors.push_back(i);
+            divisors.push_back(n / i);
+        }
+    }
+    _sort(divisors);
+    for(int k: divisors) {
+        if(k == n) {
+            cout<<k<<ee;
+            return;
+        }
+        if(possible(s, n, k)) {
+            cout<<k<<ee;
+            return;
+        }
+    }
+    cout<<-1<<ee;
 }
 
 /***********************************/

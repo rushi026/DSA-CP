@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            B. Progressive Square
+    Problem link:       https://codeforces.com/contest/1955/problem/B
+    Contest:            Codeforces Round 938 (Div. 3)
+    Date:               08/04/2024
+    Last Updated:       08/04/2024
     Author:             Rushiraj Parekh
 */
 
@@ -42,10 +42,28 @@ ll pow(ll x, ll n) {
     return res;
 }
 
-
 /***********************************/
+
 void solve() {
-    
+    int n, c, d, mini = INT_MAX;
+    cin>>n>>c>>d;
+    vector<int> v(n*n);
+    for(int &i: v) {
+        cin>>i;
+        mini = min(mini, i);
+    }
+    _sort(v);
+    vector<vector<int>> mat(n, vector<int> (n));
+    mat[0][0] = mini;
+    for(int i = 1; i < n; i++) mat[0][i] = mat[0][i-1] + d;
+    for(int i = 1; i < n; i++) {
+        for(int j = 0; j < n; j++) mat[i][j] = mat[i-1][j] + c;
+    }
+    vector<int> v2;
+    for(int i = 0; i < n; i++) for(int j = 0; j < n; j++) v2.pb(mat[i][j]);
+    _sort(v2);
+    for(int i = 0; i < n*n; i++) if(v[i] != v2[i]) { cout<<"NO"<<ee; return; }
+    cout<<"YES"<<ee;
 }
 
 /***********************************/

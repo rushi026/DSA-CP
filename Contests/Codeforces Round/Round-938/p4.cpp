@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            D. Inaccurate Subsequence Search
+    Problem link:       https://codeforces.com/contest/1955/problem/D
+    Contest:            Codeforces Round 938 (Div. 3)
+    Date:               08/04/2024
+    Last Updated:       08/04/2024
     Author:             Rushiraj Parekh
 */
 
@@ -42,10 +42,42 @@ ll pow(ll x, ll n) {
     return res;
 }
 
-
 /***********************************/
+
 void solve() {
-    
+    ll n, k, m, ans = 0;
+    cin>>n>>m>>k;
+    vector<int> a(n);
+    scan(a);
+    unordered_map<int, int> b;
+    for(int i = 0; i < m; i++) {
+        int c;
+        cin>>c;
+        b[c]++;
+    }
+    ll c = 0;
+    unordered_map<int, int> temp;
+    for(int i = 0; i < m; i++) {
+        temp[a[i]]++;
+        if(b[a[i]]) {
+            if(temp[a[i]] <= b[a[i]]) c++;
+        }
+    }
+    if(c >= k) ans++;
+    for(int i = 1; i <= n-m; i++) {
+        if(b[a[i - 1]]) {
+            if(temp[a[i - 1]] <= b[a[i - 1]]) c--;
+        }
+        temp[a[i - 1]]--;
+        if(!temp[a[i - 1]]) temp.erase(a[i - 1]);
+
+        temp[a[i + m - 1]]++;
+        if(b[a[i + m - 1]]) {
+            if(temp[a[i + m - 1]] <= b[a[i + m - 1]]) c++;
+        }
+        if(c >= k) ans++;
+    }
+    cout<<ans<<ee;
 }
 
 /***********************************/

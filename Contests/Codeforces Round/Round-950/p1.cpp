@@ -1,9 +1,9 @@
 /*
     Problem:            xyz
     Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Contest:            Codeforces Round 950 (Div. 3)
+    Date:               03/06/2024
+    Last Updated:       03/06/2024
     Author:             Rushiraj Parekh
 */
 
@@ -45,7 +45,19 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    int n, m;
+    cin>>n>>m;
+    vector<int> count(7);
+    string s;
+    cin>>s;
+    for(char c: s) {
+        count[c-65]++;
+    }
+    int ans = 0;
+    for(int k: count) {
+        ans += max(0, m - k);
+    }
+    cout<<ans<<ee;
 }
 
 /***********************************/

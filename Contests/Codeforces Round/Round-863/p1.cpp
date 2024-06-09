@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A. Insert Digit
+    Problem link:       https://codeforces.com/contests/1811/problem/A
+    Contest:            Codeforces Round 863 (Div. 3)
+    Date:               04/04/2023
+    Last Updated:       04/04/2023
     Author:             Rushiraj Parekh
 */
 
@@ -25,7 +25,7 @@ using namespace std;
 #define _sort(x)            sort(all(x))
 #define speedy              ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define ins(vec,pos,val)    vec.emplace(vec.begin()+pos, val)
-#define del(vec,pos)        vec.erase(vec.begin()+pos)
+#define del(vec,pos)        vec.erase(vec.begin()+pos)  
 #define sll                	set<ll>
 #define pll               	pair<ll, ll>
 #define mll                	map<ll, ll>
@@ -45,7 +45,25 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    ll n, i;
+    char k;
+    cin>>n>>k;
+    string s;
+    cin>>s;
+    if(k == '0') {
+        cout<<s<<k<<ee;
+        return;
+    }
+    bool flag = true;
+    loop(i,0,n,1) {
+        if(s[i] < k && flag) {
+            cout<<k<<s[i];
+            flag = false;
+        }
+        else cout<<s[i];
+    }
+    if(flag) cout<<k<<ee;
+    else cout<<ee;
 }
 
 /***********************************/

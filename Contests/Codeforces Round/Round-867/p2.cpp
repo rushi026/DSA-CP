@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            B. Karina and Array
+    Problem link:       https://codeforces.com/contest/1822/problem/B
+    Contest:            Codeforces Round 867 (Div. 3)
+    Date:               24/04/2023
+    Last Updated:       24/04/2023
     Author:             Rushiraj Parekh
 */
 
@@ -25,7 +25,7 @@ using namespace std;
 #define _sort(x)            sort(all(x))
 #define speedy              ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define ins(vec,pos,val)    vec.emplace(vec.begin()+pos, val)
-#define del(vec,pos)        vec.erase(vec.begin()+pos)
+#define del(vec,pos)        vec.erase(vec.begin()+pos)  
 #define sll                	set<ll>
 #define pll               	pair<ll, ll>
 #define mll                	map<ll, ll>
@@ -45,7 +45,12 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    ll n;
+    cin>>n;
+    vll v(n);
+    scan(v);
+    _sort(v);
+    cout<<max(v[0]*v[1], v[n-1]*v[n-2])<<ee;
 }
 
 /***********************************/

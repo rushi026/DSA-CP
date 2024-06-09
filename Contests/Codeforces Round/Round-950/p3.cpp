@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            C. Sofia and the Lost Operations
+    Problem link:       https://codeforces.com/contest/1980/problem/C
+    Contest:            Codeforces Round 950 (Div. 3)
+    Date:               03/06/2024
+    Last Updated:       03/06/2024
     Author:             Rushiraj Parekh
 */
 
@@ -44,8 +44,50 @@ ll pow(ll x, ll n) {
 
 
 /***********************************/
+
+int binarySearch(vector<int> &d, int k) {
+    int l = 0, h = d.size();
+    while(l <= h) {
+        int mid = l + (h - l) / 2;
+        if(d[mid] == k) return mid;
+        if(d[mid] > k) h = mid - 1;
+        else l = mid + 1;
+    }
+    return -1;
+}
+
 void solve() {
-    
+    int n;
+    cin>>n;
+    vector<int> a(n), b(n);
+    scan(a);
+    scan(b);
+    int m;
+    cin>>m;
+    vector<int> d(m);
+    scan(d);
+    bool present = false;
+    for(int i: b) {
+        if(i == d[m-1]) {
+            present = true;
+            break;
+        }
+    }
+    if(!present) {
+        cout<<"NO"<<ee;
+        return;
+    }
+    unordered_map<int, int> mp;
+    for(int i: d) mp[i]++;
+    for(int i = 0; i < n; i++) {
+        if(a[i] == b[i]) continue;
+        if(!mp[b[i]]) {
+            cout<<"NO"<<ee;
+            return;
+        }
+        mp[b[i]]--;
+    }
+    cout<<"YES"<<ee;
 }
 
 /***********************************/

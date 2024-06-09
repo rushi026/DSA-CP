@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A. Yogurt Sale
+    Problem link:       https://codeforces.com/contest/1955/problem/A
+    Contest:            Codeforces Round 938 (Div. 3)
+    Date:               08/04/2024
+    Last Updated:       08/04/2024
     Author:             Rushiraj Parekh
 */
 
@@ -42,10 +42,16 @@ ll pow(ll x, ll n) {
     return res;
 }
 
-
 /***********************************/
+
 void solve() {
-    
+    int n, a, b;
+    cin>>n>>a>>b;
+    if(b > a*2) {
+        cout<<n*a<<ee;
+    } else {
+        cout<<(n/2 * b) + ((n%2)*a) <<ee;
+    }
 }
 
 /***********************************/

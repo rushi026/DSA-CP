@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            C. Bun Lover
+    Problem link:       https://codeforces.com/contest/1822/problem/C
+    Contest:            Codeforces Round 867 (Div. 3)
+    Date:               24/04/2023
+    Last Updated:       24/04/2023
     Author:             Rushiraj Parekh
 */
 
@@ -25,7 +25,7 @@ using namespace std;
 #define _sort(x)            sort(all(x))
 #define speedy              ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define ins(vec,pos,val)    vec.emplace(vec.begin()+pos, val)
-#define del(vec,pos)        vec.erase(vec.begin()+pos)
+#define del(vec,pos)        vec.erase(vec.begin()+pos)  
 #define sll                	set<ll>
 #define pll               	pair<ll, ll>
 #define mll                	map<ll, ll>
@@ -45,7 +45,10 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    ll n, a=26, d=11, c=2;
+    cin>>n;
+    n -= 3;
+    cout<<a+(n-1)*d + (n-1)*(n-2)/2*c<<ee;
 }
 
 /***********************************/

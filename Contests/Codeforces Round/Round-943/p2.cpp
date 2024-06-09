@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            B. Prefiquence
+    Problem link:       https://codeforces.com/contest/1968/problem/B
+    Contest:            Codeforces Round 943 (Div. 3)
+    Date:               02/05/2024
+    Last Updated:       02/05/2024
     Author:             Rushiraj Parekh
 */
 
@@ -25,7 +25,7 @@ using namespace std;
 #define _sort(x)            sort(all(x))
 #define speedy              ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define ins(vec,pos,val)    vec.emplace(vec.begin()+pos, val)
-#define del(vec,pos)        vec.erase(vec.begin()+pos)
+#define del(vec,pos)        vec.erase(vec.begin()+pos)  
 #define sll                	set<ll>
 #define pll               	pair<ll, ll>
 #define mll                	map<ll, ll>
@@ -44,8 +44,26 @@ ll pow(ll x, ll n) {
 
 
 /***********************************/
+
 void solve() {
-    
+    int n, m;
+    cin>>n>>m;
+    string a, b;
+    cin>>a;
+    cin>>b;
+    int i = 0, last = -1;
+    for(; i < n; i++) {
+        bool flag = false;
+        for(int j = last + 1; j < m; j++) {
+            if(a[i] == b[j]) {
+                last = j;
+                flag = true;
+                break;
+            }
+        }
+        if(!flag) break;
+    }
+    cout<<i<<ee;
 }
 
 /***********************************/
