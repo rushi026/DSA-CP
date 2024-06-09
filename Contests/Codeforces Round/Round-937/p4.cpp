@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            D. Product of Binary Decimals
+    Problem link:       https://codeforces.com/contest/1950/problem/D
+    Contest:            Codeforces Round 937 (Div. 4)
+    Date:               28/03/2024
+    Last Updated:       01/04/2024
     Author:             Rushiraj Parekh
 */
 
@@ -42,10 +42,40 @@ ll pow(ll x, ll n) {
     return res;
 }
 
-
 /***********************************/
+vector<int> pre;
+vector<int> dp(1e5+1, 0);
+
+bool binary(int n) {
+    while(n) {
+        if((n % 10 != 0) && (n % 10 != 1)) return false;
+        n /= 10;
+    }
+    return true;
+}
+
+void seeder() {
+    for(int i = 1; i <= 1e5; i++) {
+        if(binary(i)) {
+            pre.push_back(i);
+            dp[i] = 1;
+        }
+    }
+    for(int i = 1; i <= 1e5; i++) {
+        if(dp[i] == 0) {
+            for(int k: pre) {
+                if(k > i) break;
+                if((i % k == 0) && dp[i / k] == 1) dp[i] = 1;
+            }
+        }
+    }
+}
+
 void solve() {
-    
+    int n;
+    cin>>n;
+    if(dp[n]) cout<<"YES"<<ee;
+    else cout<<"NO"<<ee;
 }
 
 /***********************************/
@@ -56,6 +86,7 @@ int main() {
     #endif
 
     speedy;
+    seeder();
     ll t=1;
     cin>>t;
     while(t--) solve();

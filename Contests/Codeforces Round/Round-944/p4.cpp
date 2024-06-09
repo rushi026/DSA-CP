@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            D. Binary Cut
+    Problem link:       https://codeforces.com/contest/1971/problem/D
+    Contest:            Codeforces Round 944 (Div. 4)
+    Date:               10/05/2024
+    Last Updated:       10/05/2024
     Author:             Rushiraj Parekh
 */
 
@@ -45,7 +45,15 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    string a;
+    cin>>a;
+    int n = a.size();
+    int c = 1, temp = 0;
+    for(int i = 1; i < n; i++) {
+        if(a[i] != a[i-1]) c++;
+        if(a[i] == '1' && a[i-1] == '0') temp = 1;
+    }
+    cout<<c-temp<<ee;
 }
 
 /***********************************/

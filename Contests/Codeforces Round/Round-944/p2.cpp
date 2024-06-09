@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            B. Different String
+    Problem link:       https://codeforces.com/contest/1971/problem/B
+    Contest:            Codeforces Round 944 (Div. 4)
+    Date:               10/05/2024
+    Last Updated:       10/05/2024
     Author:             Rushiraj Parekh
 */
 
@@ -45,7 +45,19 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    string s;
+    cin>>s;
+    int n = s.size(), i = 1;
+    for(i = 1; i < n; i++) {
+        if(s[i] != s[0]) break;
+    }
+    if(i == n) {
+        cout<<"NO"<<ee;
+        return;
+    }
+    cout<<"YES"<<ee;
+    swap(s[0], s[i]);
+    cout<<s<<ee;
 }
 
 /***********************************/

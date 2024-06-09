@@ -1,9 +1,9 @@
 /*
     Problem:            xyz
     Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Contest:            Codeforces Round 905 (Div. 3)
+    Date:               22/10/2023
+    Last Updated:       22/10/2023
     Author:             Rushiraj Parekh
 */
 
@@ -25,7 +25,7 @@ using namespace std;
 #define _sort(x)            sort(all(x))
 #define speedy              ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define ins(vec,pos,val)    vec.emplace(vec.begin()+pos, val)
-#define del(vec,pos)        vec.erase(vec.begin()+pos)
+#define del(vec,pos)        vec.erase(vec.begin()+pos)  
 #define sll                	set<ll>
 #define pll               	pair<ll, ll>
 #define mll                	map<ll, ll>
@@ -45,7 +45,17 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    int n;
+    cin>>n;
+    int a = (n%10) ? n%10 : 10;
+    n /= 10;
+    int b = (n%10) ? n%10 : 10;
+    n /= 10;
+    int c= (n%10) ? n%10 : 10;
+    n /= 10;
+    int d = (n%10) ? n%10 : 10;
+    cout<<(d - 1 + abs(c-d) + abs(b-c) + abs(a-b) + 4);
+    cout<<ee;
 }
 
 /***********************************/

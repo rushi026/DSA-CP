@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            B. Choosing Cubes
+    Problem link:       https://codeforces.com/contest/1980/problem/B
+    Contest:            Codeforces Round 950 (Div. 3)
+    Date:               03/06/2024
+    Last Updated:       03/06/2024
     Author:             Rushiraj Parekh
 */
 
@@ -44,8 +44,25 @@ ll pow(ll x, ll n) {
 
 
 /***********************************/
+
+bool comparator(int a, int b) {
+    return a > b;
+}
+
 void solve() {
-    
+    int n,f,k;
+    cin>>n>>f>>k;
+    vector<int> a(n);
+    scan(a);
+    int fav = a[f-1];
+    sort(a.begin(), a.end(), comparator);
+    if(k-1 >= 0 && k < n && a[k] == fav && a[k-1] == fav) {
+        cout<<"MAYBE"<<ee;
+    } else if(k < n && a[k] >= fav) {
+        cout<<"NO"<<ee;
+    } else {
+        cout<<"YES"<<ee;
+    }
 }
 
 /***********************************/

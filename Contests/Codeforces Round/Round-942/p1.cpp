@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A. Contest Proposal
+    Problem link:       https://codeforces.com/contest/1972/problem/A
+    Contest:            Codeforces Round 942 (Div. 2)
+    Date:               30/04/2024
+    Last Updated:       30/04/2024
     Author:             Rushiraj Parekh
 */
 
@@ -25,27 +25,37 @@ using namespace std;
 #define _sort(x)            sort(all(x))
 #define speedy              ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define ins(vec,pos,val)    vec.emplace(vec.begin()+pos, val)
-#define del(vec,pos)        vec.erase(vec.begin()+pos)
+#define del(vec,pos)        vec.erase(vec.begin()+pos)  
 #define sll                	set<ll>
 #define pll               	pair<ll, ll>
 #define mll                	map<ll, ll>
 
 /**********************************/
 
-ll pow(ll x, ll n) {
-    ll res = 1;
-    while(n){
-        if(n&1) res *= x;
-        x *= x;
-        n >>= 1;
-    }
-    return res;
-}
+// ll pow(ll x, ll n) {
+//     ll res = 1;
+//     while(n){
+//         if(n&1) res *= x;
+//         x *= x;
+//         n >>= 1;
+//     }
+//     return res;
+// }
 
 
 /***********************************/
 void solve() {
-    
+    ll n, c = 0;
+    cin>>n;
+    vector<ll> a(n), b(n);
+    scan(a);
+    scan(b);
+    ll i = 0, j = 0;
+    while(j < n) {
+        if(a[i] <= b[j]) i++, j++;
+        else c++, j++;
+    }
+    cout<<c<<endl;
 }
 
 /***********************************/

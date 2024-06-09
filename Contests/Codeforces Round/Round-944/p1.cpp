@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A. My First Sorting Problem
+    Problem link:       https://codeforces.com/contest/1971/problem/A
+    Contest:            Codeforces Round 944 (Div. 4)
+    Date:               10/05/2024
+    Last Updated:       10/05/2024
     Author:             Rushiraj Parekh
 */
 
@@ -45,7 +45,10 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    int a, b;
+    cin>>a>>b;
+    if(a < b) cout<<a<<" "<<b<<ee;
+    else cout<<b<<" "<<a<<ee;
 }
 
 /***********************************/

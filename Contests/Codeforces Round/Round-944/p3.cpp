@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            C. Clock and Strings
+    Problem link:       https://codeforces.com/contest/1971/problem/C
+    Contest:            Codeforces Round 944 (Div. 4)
+    Date:               10/05/2024
+    Last Updated:       10/05/2024
     Author:             Rushiraj Parekh
 */
 
@@ -45,7 +45,13 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    int a,b,c,d;
+    cin>>a>>b>>c>>d;
+    if(a>b) swap(a,b);
+    if(c>d) swap(c,d);
+    if(a>c) swap(a,c), swap(b,d);
+    if(a<c && c<b && b<d) cout<<"YES"<<ee;
+    else cout<<"NO"<<ee;
 }
 
 /***********************************/

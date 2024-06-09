@@ -1,9 +1,9 @@
 /*
-    Problem:            xyz
-    Problem link:       xyz
-    Contest:            xyz
-    Date:               dd/mm/yyyy
-    Last Updated:       dd/mm/yyyy
+    Problem:            A - Stair, Peak, or Neither?
+    Problem link:       https://codeforces.com/contest/1950/problem/A
+    Contest:            Codeforces Round 937 (Div. 4)
+    Date:               28/03/2024
+    Last Updated:       28/03/2024
     Author:             Rushiraj Parekh
 */
 
@@ -25,7 +25,7 @@ using namespace std;
 #define _sort(x)            sort(all(x))
 #define speedy              ios::sync_with_stdio(false); cin.tie(0); cout.tie(0);
 #define ins(vec,pos,val)    vec.emplace(vec.begin()+pos, val)
-#define del(vec,pos)        vec.erase(vec.begin()+pos)
+#define del(vec,pos)        vec.erase(vec.begin()+pos)  
 #define sll                	set<ll>
 #define pll               	pair<ll, ll>
 #define mll                	map<ll, ll>
@@ -45,7 +45,11 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    
+    int a, b, c;
+    cin>>a>>b>>c;
+    if(a < b && b < c) cout<<"STAIR"<<ee;
+    else if(a < b && b > c) cout<<"PEAK"<<ee;
+    else cout<<"NONE"<<ee;
 }
 
 /***********************************/
