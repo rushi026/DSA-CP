@@ -1,7 +1,7 @@
 /*
-    Problem:            A. Bit++
-    Problem link:       https://codeforces.com/problemset/problem/282/A
-    Date:               19/06/2024
+    Problem:            A. Next Round
+    Problem link:       https://codeforces.com/problemset/problem/158/A
+    Date:               20/06/2024
     Last Updated:       20/06/2024
     Author:             Rushiraj Parekh
 */
@@ -44,13 +44,12 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    int c = 0, n;
-    cin>>n;
-    while(n--) {
-        string s;
-        cin>>s;
-        if(s[1] == '+') c++;
-        else c--;
+    int n, k, c = 0;
+    cin>>n>>k;
+    vector<int> a(n);
+    scan(a);
+    for(int i: a) {
+        if(i && i >= a[k-1]) c++;
     }
     cout << c << ee;
 }

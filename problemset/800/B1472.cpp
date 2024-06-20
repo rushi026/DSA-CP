@@ -1,7 +1,7 @@
 /*
-    Problem:            A. Bit++
-    Problem link:       https://codeforces.com/problemset/problem/282/A
-    Date:               19/06/2024
+    Problem:            B. Fair Division
+    Problem link:       https://codeforces.com/problemset/problem/1472/B
+    Date:               20/06/2024
     Last Updated:       20/06/2024
     Author:             Rushiraj Parekh
 */
@@ -41,18 +41,29 @@ ll pow(ll x, ll n) {
     return res;
 }
 
+void no() {
+    cout<<"NO"<<ee;
+}
+
+void yes() {
+    cout<<"YES"<<ee;
+}
 
 /***********************************/
 void solve() {
-    int c = 0, n;
+    int n;
     cin>>n;
+    int c = 0, d = 0;
     while(n--) {
-        string s;
-        cin>>s;
-        if(s[1] == '+') c++;
-        else c--;
+        int a;
+        cin>>a;
+        if(a&1) c++;
+        else d++;
     }
-    cout << c << ee;
+    if(c&1) return no();
+    if((!(c&1)) && (!(d&1))) return yes();
+    if(!c) return no();
+    return yes();
 }
 
 /***********************************/
@@ -64,7 +75,7 @@ int main() {
 
     speedy;
     ll t=1;
-    // cin>>t;
+    cin>>t;
     while(t--) solve();
     return 0;
 }

@@ -1,7 +1,7 @@
 /*
-    Problem:            A. Bit++
-    Problem link:       https://codeforces.com/problemset/problem/282/A
-    Date:               19/06/2024
+    Problem:            A. Domino piling
+    Problem link:       https://codeforces.com/problemset/problem/50/A
+    Date:               20/06/2024
     Last Updated:       20/06/2024
     Author:             Rushiraj Parekh
 */
@@ -44,15 +44,9 @@ ll pow(ll x, ll n) {
 
 /***********************************/
 void solve() {
-    int c = 0, n;
-    cin>>n;
-    while(n--) {
-        string s;
-        cin>>s;
-        if(s[1] == '+') c++;
-        else c--;
-    }
-    cout << c << ee;
+    int n, m;
+    cin>>n>>m;
+    cout<<n*m/2<<ee;
 }
 
 /***********************************/
